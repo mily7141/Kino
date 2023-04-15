@@ -1,0 +1,35 @@
+﻿@using Kino.Data.Models;
+@model List<Seans>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Nazwa filmu</th>
+            <th>Data</th>
+            <th>Sala</th>
+            <th>Wersja językowa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var seans in Model)
+        {
+            <tr>
+                <td>@seans.Film.Tytul</td>
+                <td>@seans.Data</td>
+                <td>@seans.Sala.Numer</td>
+                <td>@seans.WersjaJez</td>
+                <td>
+                    @if(seans.Data > DateTime.Now)
+                    {
+                        <button class="btn btn-success">Kup bilet</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

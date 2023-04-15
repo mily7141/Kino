@@ -1,0 +1,54 @@
+﻿@model ZamowienieViewModel
+
+<h1>Szczegóły seansu</h1>
+
+<div>
+    <div>
+        Tytuł: @ViewBag.Seans.Film.Tytul
+    </div>
+    <div>
+        Gatunek: @ViewBag.Seans.Film.Gatunek
+    </div>
+    <div>
+        Czas trwania: @ViewBag.Seans.Film.CzasTrawania
+    </div>
+    <div>
+        Kraj: @ViewBag.Seans.Kraj
+    </div>
+    <div>
+        Data seansu: @ViewBag.Seans.Data
+    </div>
+    <div>
+        Sala: @ViewBag.Seans.Sala.Numer
+    </div>
+    <div>
+        Wersja językowa: @ViewBag.Seans.WersjaJez
+    </div>
+</div>
+
+<h3>Kup bilet</h3>
+
+<form method="POST">
+    <div>
+        <label asp-for="Imie"></label>
+        <input asp-for="Imie" />
+        <span asp-validation-for="Imie" class="text-danger"></span>
+    </div>
+        <div>
+        <label asp-for="Nazwisko"></label>
+        <input asp-for="Nazwisko" />
+        <span asp-validation-for="Nazwisko" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Mail"></label>
+        <input asp-for="Mail" />
+        <span asp-validation-for="Mail" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Platnosc"></label>
+        <input asp-for="Platnosc" />
+        <span asp-validation-for="Platnosc" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-info">Kup bilet</button>
+</form>
